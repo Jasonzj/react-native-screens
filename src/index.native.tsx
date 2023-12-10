@@ -486,6 +486,12 @@ class SearchBar extends React.Component<SearchBarProps> {
     );
   }
 
+  closeSearch() {
+    this._callMethodWithRef(ref =>
+      ScreensNativeModules.NativeSearchBarCommands.closeSearch(ref)
+    );
+  }
+
   render() {
     if (!isSearchBarAvailableForCurrentPlatform) {
       console.warn(
